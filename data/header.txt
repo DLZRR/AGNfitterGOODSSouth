@@ -1,0 +1,1 @@
+ID wavelength_f3 f3 df3 wavelength_f4 f4 df4 wavelength_f5 f5 df5 wavelength_f8 f8 df8 wavelength_f24 f24 df24 wavelength_f70 f70 df70 wavelength_f160 f160 df160 wavelength_f250 f250 df250 wavelength_f350 f350 df350 wavelength_f500 f500 df500 wavelength_fr fr dfr wavelength_fu fu dfu wavelength_fg fg dfg wavelength_fh fh dfh wavelength_smam smam dsmam wavelength_rmag rmag drmag z
