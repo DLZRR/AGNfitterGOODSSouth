@@ -238,8 +238,8 @@ def MCMC_settings():
 
     mc['Nwalkers'] = 100  ## number of walkers 
     mc['Nburnsets']= 2   ## number of burn-in sets
-    mc['Nburn'] = 4000 ## length of each burn-in sets
-    mc['Nmcmc'] = 10000  ## length of each burn-in sets
+    mc['Nburn'] = 10000 ## length of each burn-in sets
+    mc['Nmcmc'] = 20000  ## length of each burn-in sets
     mc['iprint'] = 1000 ## show progress in terminal in steps of this many samples
 
     return mc
