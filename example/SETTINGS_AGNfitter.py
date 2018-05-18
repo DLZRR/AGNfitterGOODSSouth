@@ -28,7 +28,7 @@ def CATALOG_settings():
 
     ##GENERAL
     cat['path'] ='/home/roozemond/Pictures/AGNfitter_for_Kirk_GOODS_South/'  #path to the AGNfitter code
-    cat['filename'] = cat['path']+'data/KIRKSGOODS.txt'
+    cat['filename'] = cat['path']+'data/KIRKSGOODS_70.txt'
     cat['filetype'] = 'ASCII' ## catalog file type: 'ASCII' or 'FITS'. 
     cat['name'] = 0                 ## If ASCII: Column index (int) of source IDs
                                     ## If FITS : Column name (str). E.g. 'ID'
@@ -37,7 +37,7 @@ def CATALOG_settings():
 
     ##FREQUENCIES/WAVELENGTHS 
     ## if ASCII specify 'freq/wl_list', if FITS specify 'freq/wl_suffix'
-    cat['freq/wl_list'] = np.arange(2, 58, 3).tolist()                                  
+    cat['freq/wl_list'] = np.arange(2, 58, 2).tolist()                                  
                                         ## If ASCII: List of column indexes (int), 
                                         ##           corresponding to freq/wl.                                  
     #cat['freq/wl_suffix'] = '_wl'      ## If FITS: common ending to wavelength column names
@@ -71,7 +71,7 @@ def CATALOG_settings():
                                       # and when using an external processor.
                                       # Default: cat['path'] (same as AGNfitter code path) 
 
-    cat['output_folder'] =  '/data1/OUTPUT_AGNfitter/Kirk15/' #if no special OUTPUT folder, leave default
+    cat['output_folder'] =  '/data1/OUTPUT_AGNfitter/Kirk_2_6_something/' #if no special OUTPUT folder, leave default
 
     cat['use_central_wavelength'] = True # Option to use central wavelength if no wavelengths in table
 
