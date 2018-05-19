@@ -131,7 +131,7 @@ def STARBURST(path, modelsettings):
         Dwl, DnuLnu = dusttable['LAM'],dusttable['SED'] #micron, Lsun
         Pwl, PnuLnu = pahstable['LAM'],pahstable['SED'] #micron, Lsun
         Tdust = np.array(dusttable['TDUST'])[0] #K
-        fracPAH = np.arange(2.5, 2.6, 1.)/100
+        fracPAH = np.arange(0.25, 6.25, 0.25)/100
         idxs=[np.arange(len(Tdust)), np.arange(len(fracPAH))]
         par_idxs_combinations = np.array(list(itertools.product(*idxs)))
 
@@ -144,7 +144,7 @@ def STARBURST(path, modelsettings):
         #Construct dictionaries 
         for c in par_idxs_combinations:
             t=c[0]
-            fp=0
+            fp=c[1]
             #print fracPAH[0]
 
             sb_nu0 = np.array(Dnu[t,:])[::-1]
@@ -153,11 +153,11 @@ def STARBURST(path, modelsettings):
             # print (Dnu[t,:])
             # print np.shape(sb_Fnu0), sb_Fnu0
 
-            STARBURSTFdict_4plot[str(Tdust[t])] = np.log10(sb_nu0), sb_Fnu0
+            STARBURSTFdict_4plot[str(Tdust[t]), str(fracPAH[fp])] = np.log10(sb_nu0), sb_Fnu0
 
         ## Name the parameters that compose the keys of the dictionary: STARBURSTFdict_4plot[key]. 
         ## Add the names in the same order as their values are arranged in the dictionary key above.    
-        parameters_names =['Tdust']
+        parameters_names =['Tdust', 'fracPAH']
 
         return STARBURSTFdict_4plot, parameters_names
 
