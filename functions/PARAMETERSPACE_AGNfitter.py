@@ -182,7 +182,7 @@ def ymodel(data_nus, z, dlum, dictkey_arrays, dict_modelfluxes, P, *par):
     ## Use pick_nD if model has more than one parameter,
     ## and pick_1D if it has only one.
     gal_obj.pick_nD(par[P['idxs'][0]:P['idxs'][1]])  
-    sb_obj.pick_1D(par[P['idxs'][1]:P['idxs'][2]]) 
+    sb_obj.pick_nD(par[P['idxs'][1]:P['idxs'][2]]) 
     tor_obj.pick_1D(par[P['idxs'][2]:P['idxs'][3]])            
 
     ### Use when BBB model has only 1 par (Richards 06)
@@ -198,7 +198,7 @@ def ymodel(data_nus, z, dlum, dictkey_arrays, dict_modelfluxes, P, *par):
 
     try: 
         bands, gal_Fnu = GALAXYFdict[tuple(gal_obj.matched_parkeys)]   
-        _, sb_Fnu= STARBURSTFdict[sb_obj.matched_parkeys] 
+        _, sb_Fnu= STARBURSTFdict[tuple(sb_obj.matched_parkeys)] 
         #_, bbb_Fnu = BBBFdict[tuple(bbb_obj.matched_parkeys)]   ### use when the BBB model has >1 parameters
         _, bbb_Fnu = BBBFdict[bbb_obj.matched_parkeys]   ### use when BBB model has only 1 par (Richards 06)
         _, tor_Fnu= TORUSFdict[tor_obj.matched_parkeys] 
